@@ -24,7 +24,7 @@ def main():
     except FileExistsError:
         pass
     time.sleep(1)
-    subprocess.call(["clion.cmd", '"' + subdir + '"'], cwd=subdir)
+    subprocess.call([config.get("clion"), '"' + subdir + '"'], cwd=subdir)
     # Use subprocess to run cargo.exe in the subdirectory
 
 
