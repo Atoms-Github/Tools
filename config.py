@@ -4,6 +4,7 @@ import os
 
 file_name = "config.toml"
 def get(name):
+    gen()
     with open(file_name, "r") as toml_file:
         data = toml.load(toml_file)
     return data[name]
