@@ -7,7 +7,6 @@ import config
 
 reddit = "https://www.reddit.com/r/dailyprogrammer/wiki/challenges/"
 spreadsheet = "https://docs.google.com/spreadsheets/d/1aexPbZMsa3SKDMD6JZX3xv6j7ieiaxKV62vwMNfvfwk/edit#gid=0"
-month = r"C:\_C_\08-22 - August\Daily"
 
 def main():
     month = config.get("month")
