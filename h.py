@@ -11,7 +11,7 @@ spreadsheet = "https://docs.google.com/spreadsheets/d/1aexPbZMsa3SKDMD6JZX3xv6j7
 def main():
     month = config.get("month")
     day = datetime.datetime.today().day
-    subdir = month + "\\" + "a" + str(day)
+    subdir = month + "\\Daily\\" + "a" + str(day)
     webbrowser.open(reddit)
 
     webbrowser.open(spreadsheet)
