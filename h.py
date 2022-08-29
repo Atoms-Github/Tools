@@ -12,9 +12,6 @@ def main():
     month = config.get("month")
     day = datetime.datetime.today().day
     subdir = month + "\\Daily\\" + "a" + str(day)
-    webbrowser.open(reddit)
-
-    webbrowser.open(spreadsheet)
     # Get current date of the month
     try:
         os.makedirs(subdir)
@@ -23,9 +20,12 @@ def main():
     except FileExistsError:
         pass
     time.sleep(1)
-    subprocess.call([config.get("clion"), '"' + subdir + '"'], cwd=subdir)
+    clion = config.get("clion")
+    subprocess.call([clion, '"' + subdir + '"'], cwd=subdir)
     # Use subprocess to run cargo.exe in the subdirectory
 
+    webbrowser.open(reddit)
+    webbrowser.open(spreadsheet)
 
 if __name__ == "__main__":
     main()
