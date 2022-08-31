@@ -5,17 +5,15 @@ import subprocess
 import time
 import config
 
-reddit = "https://www.reddit.com/r/dailyprogrammer/wiki/challenges/"
-spreadsheet = "https://docs.google.com/spreadsheets/d/1aexPbZMsa3SKDMD6JZX3xv6j7ieiaxKV62vwMNfvfwk/edit#gid=0"
+reddit = "https://leetcode.com/"
+spreadsheet = "https://docs.google.com/spreadsheets/d/1Vex9NSi8At0jsg8TS6RUjX4n2t7IYbthlSXd7y_g8MY/edit#gid=0"
 
 def main():
-    month = config.get("month")
     day = datetime.datetime.today().day
-    subdir = month + "\\Daily\\" + "a" + str(day)
+    subdir = os.path.expandvars("%month%") + "\\Daily\\" + "a" + str(day)
     webbrowser.open(reddit)
 
     webbrowser.open(spreadsheet)
-    # Get current date of the month
     try:
         os.makedirs(subdir)
         subprocess.call(["cargo.exe", "init"], cwd=subdir)
@@ -23,8 +21,7 @@ def main():
     except FileExistsError:
         pass
     time.sleep(1)
-    subprocess.call([config.get("clion"), '"' + subdir + '"'], cwd=subdir)
-    # Use subprocess to run cargo.exe in the subdirectory
+    subprocess.call(["clion.cmd", '"' + subdir + '"'], cwd=subdir)
 
 
 if __name__ == "__main__":
