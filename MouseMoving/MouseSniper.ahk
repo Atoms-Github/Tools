@@ -2,29 +2,49 @@
 #include MouseDelta.ahk
 
 ScaleFactor := 0
+QtyHeld := 0
 
 md := new MouseDelta("MouseEvent").Start()
 
+hotkey, % "F24", CentrePressed
+hotkey, % "F23", ZoomPressed
 hotkey, % "F22", FastPressed
-hotkey, % "F23", MedPressed
-hotkey, % "F24", SlowPressed
+hotkey, % "F21", MedPressed
+hotkey, % "F20", SlowPressed
+hotkey, % "F20 up", SpeedReleased
+hotkey, % "F21 up", SpeedReleased
 hotkey, % "F22 up", SpeedReleased
 hotkey, % "F23 up", SpeedReleased
-hotkey, % "F24 up", SpeedReleased
 return
  
+CentrePressed:
+	QtyHeld = 0
+	ScaleFactor = 0
+	CoordMode, Mouse, Screen
+	MouseMove, A_ScreenWidth/2, A_ScreenHeight/2, 0
+	return
 SlowPressed:
+	QtyHeld += 1
 	ScaleFactor = -0.5
 	return
 MedPressed:
+	QtyHeld += 1
 	ScaleFactor = 3
 	return
 FastPressed:
+	QtyHeld += 1
+	ScaleFactor = 5
+	return
+ZoomPressed:
+	QtyHeld += 1
 	ScaleFactor = 5
 	return
 
 SpeedReleased:
-	ScaleFactor = 0
+	QtyHeld -= 1
+	if (QtyHeld == 0){
+		ScaleFactor = 0
+	}
 	return
 
 ; Gets called when mouse moves or stops
