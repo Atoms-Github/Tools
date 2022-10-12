@@ -58,13 +58,13 @@ ZoomUp:
 MouseEvent(MouseID, x := 0, y := 0){
 	ScaleFactor = 0.0
 	if(AHeld){
-		ScaleFactor = -0.8
+		ScaleFactor = -0.7
 	}else if(BHeld){
-		ScaleFactor = 1
+		ScaleFactor = 1.3
 	}else if(CHeld){
-		ScaleFactor = 3
+		ScaleFactor = 4
 	}else if(DHeld){
-		ScaleFactor = 7
+		ScaleFactor = 9
 	}else{
 		ScaleFactor = 0.0
 	}

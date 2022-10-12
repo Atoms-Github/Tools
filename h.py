@@ -6,7 +6,6 @@ import time
 import config
 
 reddit = "https://leetcode.com/"
-spreadsheet = "https://docs.google.com/spreadsheets/d/1Vex9NSi8At0jsg8TS6RUjX4n2t7IYbthlSXd7y_g8MY/edit#gid=0"
 
 def main():
     day = datetime.datetime.today().day
