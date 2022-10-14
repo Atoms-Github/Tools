@@ -73,3 +73,43 @@ MouseEvent(MouseID, x := 0, y := 0){
 		DllCall("mouse_event",uint,1,int, x ,int, y,uint,0,int,0)
 	}
 }
+
+
+
+F14::Send {WheelDown 1}
++F14::Send {WheelUp 1}
+
+!F14::Send {WheelDown 12}
+!+F14::Send {WheelUp 12}
+
+^F14::Send {WheelDown 4}
+^+F14::Send {WheelUp 4}
+
+
+
+F15::Send {Left 5}
++F15::Send {Down 5}
+F16::Send {Up 5}
++F16::Send {Right 5}
+
+!F15::Send {Left 12}
+!+F15::Send {Down 12}
+!F16::Send {Up 12}
+!+F16::Send {Right 12}
+
+^F15::Send {Left 2}
+^+F15::Send {Down 2}
+^F16::Send {Up 2}
+^+F16::Send {Right 2}
+
+
+
+
+
+
+
+
+
+
+
+
