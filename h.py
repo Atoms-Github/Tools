@@ -10,9 +10,7 @@ reddit = "https://leetcode.com/"
 def main():
     day = datetime.datetime.today().day
     subdir = os.path.expandvars("%month%") + "\\Daily\\" + "a" + str(day)
-    webbrowser.open(reddit)
 
-    webbrowser.open(spreadsheet)
     try:
         os.makedirs(subdir)
         subprocess.call(["cargo.exe", "init"], cwd=subdir)
