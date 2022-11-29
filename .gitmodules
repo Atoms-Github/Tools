@@ -1,0 +1,3 @@
+[submodule "MouseMoving/VD.ahk"]
+	path = MouseMoving/VD.ahk
+	url = https://github.com/FuPeiJiang/VD.ahk
