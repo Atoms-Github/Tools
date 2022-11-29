@@ -5,12 +5,10 @@ import subprocess
 import time
 import config
 
-reddit = "https://leetcode.com/"
 
 def main():
     day = datetime.datetime.today().day
     subdir = os.path.expandvars("%month%") + "\\Daily\\" + "a" + str(day)
-
     try:
         os.makedirs(subdir)
         subprocess.call(["cargo.exe", "init"], cwd=subdir)
