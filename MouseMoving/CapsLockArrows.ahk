@@ -5,7 +5,7 @@ h::Left
 j::Down
 k::Up
 l::Right
-i::Enter
+SC027::Enter
 #If
 
 
